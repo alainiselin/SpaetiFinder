@@ -1,13 +1,13 @@
 public class Spaeti {
 
-    private String name;
+    private String nameSpaeti;
     private String openingTimes;
     private String adress;
     private double latitude;
     private double longitude;
 
-    public Spaeti(String name, String openingTimes, String adress, double latitude, double longitude) {
-        this.name = name;
+    public Spaeti(String nameSpaeti, String openingTimes, String adress, double latitude, double longitude) {
+        this.nameSpaeti = nameSpaeti;
         this.openingTimes = openingTimes;
         this.adress = adress;
         this.latitude = latitude;

@@ -15,6 +15,10 @@ public class App {
          * csvReader.readData();
          */
 
+         dbDao.addSpaetiToList();
+
+        
+
     }
 
 }
