@@ -13,7 +13,7 @@ class RndSpaetiSearchPanel extends GenericPanel {
         super();
         this.add(descriptionRnd, BorderLayout.NORTH);
         this.add(districtComboBox, BorderLayout.CENTER);
-        this.add(rndDistrictSearchButton, BorderLayout.SOUTH);
+        this.add(rndDistrictSearchButton, BorderLayout.EAST);
     }
 
     // Method to connect Panel with Controller --> rndDistrictSearchButton was

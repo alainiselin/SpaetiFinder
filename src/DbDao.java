@@ -11,7 +11,7 @@ public class DbDao implements genericDao {
         try {
             Connection con = ora.getConnection();
 
-            String query = "select NAMESPAETI, OPENINGTIMES, ADRESS, LATITUDE, LONGITUDE from SPAETI";
+            String query = "select * from SPAETI";
             try (Statement stmt = con.createStatement()) {
                 ResultSet rs = stmt.executeQuery(query);
                 while (rs.next()) {

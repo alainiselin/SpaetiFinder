@@ -12,7 +12,7 @@ class NearestSpaetiSearchPanel extends GenericPanel {
         super();
         this.add(descriptionNear, BorderLayout.NORTH);
         this.add(addressTextField, BorderLayout.CENTER);
-        this.add(nearestSpaetiSearchButton, BorderLayout.SOUTH);
+        this.add(nearestSpaetiSearchButton, BorderLayout.EAST);
     }
 
     // Method to connect Panel with Controller --> NearestSearchButton was

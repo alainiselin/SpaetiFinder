@@ -9,13 +9,10 @@ public class GenericPanel extends JPanel {
 
     GenericPanel() {
         // Panel Layout configuration
-        borderLayoutPanel.setHgap(10);
-        borderLayoutPanel.setVgap(10);
-
-        /*
-         * // test
-         * this.setBackground(Color.black);
-         */
+        this.setLayout(borderLayoutPanel);
+        borderLayoutPanel.setHgap(20);
+        borderLayoutPanel.setVgap(20);
+        this.setBackground(new Color(204, 238, 241));
 
         this.add(returnHome, BorderLayout.SOUTH);
 
