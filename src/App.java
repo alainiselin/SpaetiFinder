@@ -4,10 +4,9 @@ public class App {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        View view = new View();
-        CsvDao csvDao = new CsvDao();
+        SpaetiFinderMainFrame frame = new SpaetiFinderMainFrame();
         DbDao dbDao = new DbDao();
-        Controller theController = new Controller(view, csvDao, dbDao);
+        Controller theController = new Controller(frame, dbDao);
         theController.init();
 
         /*
@@ -15,9 +14,7 @@ public class App {
          * csvReader.readData();
          */
 
-         dbDao.addSpaetiToList();
-
-        
+        dbDao.addSpaetiToList();
 
     }
 

@@ -14,4 +14,12 @@ public class Spaeti {
         this.longitude = longitude;
     }
 
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
 }

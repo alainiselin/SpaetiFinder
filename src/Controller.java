@@ -1,20 +1,19 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class Controller {
 
-    private View theView;
-    private CsvDao csvDao;
+    private SpaetiFinderMainFrame mainFrame;
     private DbDao dbDao;
     private SpaetiFinderPanel spaetiFinderPanel = new SpaetiFinderPanel();
     private RndSpaetiSearchPanel rndSpaetiSearchPanel = new RndSpaetiSearchPanel();
     private NearestSpaetiSearchPanel nearestSpaetiSearchPanel = new NearestSpaetiSearchPanel();
     private DisplaySpaetiPanel displaySpaetiPanel = new DisplaySpaetiPanel();
 
-    public Controller(View theView, CsvDao csvDao, DbDao dbDao) {
+    public Controller(SpaetiFinderMainFrame mainFrame, DbDao dbDao) {
 
-        this.theView = theView;
-        this.csvDao = csvDao;
+        this.mainFrame = mainFrame;
         this.dbDao = dbDao;
 
         spaetiFinderPanel.addRNDChoiceButtonListener(new RNDChoiceButtonListener());
@@ -27,14 +26,14 @@ public class Controller {
     }
 
     public void init() {
-        spaetiFinderPanel.addPanelToFrame(theView);
+        spaetiFinderPanel.addPanelToFrame(mainFrame);
         spaetiFinderPanel.setPanelVisible();
     }
 
     class RNDChoiceButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             spaetiFinderPanel.setPanelInvisible();
-            rndSpaetiSearchPanel.addPanelToFrame(theView);
+            rndSpaetiSearchPanel.addPanelToFrame(mainFrame);
             rndSpaetiSearchPanel.setPanelVisible();
         }
     }
@@ -43,26 +42,42 @@ public class Controller {
         @Override
         public void actionPerformed(ActionEvent e) {
             spaetiFinderPanel.setPanelInvisible();
-            rndSpaetiSearchPanel.addPanelToFrame(theView);
+            rndSpaetiSearchPanel.addPanelToFrame(mainFrame);
             rndSpaetiSearchPanel.setPanelVisible();
         }
+    }
+
+    public String getDistrictComboBoxInfo() {
+        return "district";
+    }
+
+    public String getTextFieldInfo() {
+        return "address";
+    }
+
+    public void setTable(ArrayList<Spaeti> currentRequest) {
+
     }
 
     class FinalSearchButtonListenerRND implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            dbDao.requestSpaetiByDistrict(getDistrictComboBoxInfo());
             rndSpaetiSearchPanel.setPanelInvisible();
-            displaySpaetiPanel.addPanelToFrame(theView);
+            displaySpaetiPanel.addPanelToFrame(mainFrame);
             displaySpaetiPanel.setPanelVisible();
+            setTable(dbDao.getCurrentRequest());
         }
     }
 
     class FinalSearchButtonListenerNearest implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            dbDao.requestSpaetiByAddress(getTextFieldInfo());
             nearestSpaetiSearchPanel.setPanelInvisible();
-            displaySpaetiPanel.addPanelToFrame(theView);
+            displaySpaetiPanel.addPanelToFrame(mainFrame);
             displaySpaetiPanel.setPanelVisible();
+            setTable(dbDao.getCurrentRequest());
         }
 
     }
@@ -73,7 +88,7 @@ public class Controller {
             displaySpaetiPanel.setPanelInvisible();
             rndSpaetiSearchPanel.setPanelInvisible();
             nearestSpaetiSearchPanel.setPanelInvisible();
-            spaetiFinderPanel.addPanelToFrame(theView);
+            spaetiFinderPanel.addPanelToFrame(mainFrame);
             spaetiFinderPanel.setPanelVisible();
         }
 

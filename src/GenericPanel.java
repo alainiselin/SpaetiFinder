@@ -24,7 +24,7 @@ public class GenericPanel extends JPanel {
     }
 
     // Method to add Panel to Frame
-    public void addPanelToFrame(View theView) {
+    public void addPanelToFrame(SpaetiFinderMainFrame theView) {
         theView.add(this);
     }
 
