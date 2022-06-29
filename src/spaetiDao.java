@@ -11,5 +11,7 @@ public interface spaetiDao {
 
     public ArrayList<Spaeti> requestSpaetiByDistrict(String district);
 
-    public ArrayList<Spaeti> getCurrentRequest();
+    public ArrayList<Spaeti> getCurrentRequests();
+
+    public void purgeCurrentRequests();
 }

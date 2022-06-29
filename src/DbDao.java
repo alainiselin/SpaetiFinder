@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class DbDao implements spaetiDao {
 
     private ArrayList<Spaeti> spaetiListFromDb = new ArrayList<Spaeti>();
-    private ArrayList<Spaeti> currentRequest = new ArrayList<Spaeti>();
+    private ArrayList<Spaeti> currentRequests = new ArrayList<Spaeti>();
     private ArrayList<Position> positionsList = new ArrayList<Position>();
 
     public void addSpaetiToList() {
@@ -33,27 +33,25 @@ public class DbDao implements spaetiDao {
         }
     }
 
-    // purge currentRequest after use
     public ArrayList<Spaeti> requestSpaetiByDistrict(String district) {
         for (Spaeti spaeti : spaetiListFromDb) {
             if (spaeti.getDistrict().equals(district)) {
-                currentRequest.add(spaeti);
+                currentRequests.add(spaeti);
             }
         }
-        return currentRequest;
+        return currentRequests;
     }
 
-    // purge currentRequest after use
     public ArrayList<Spaeti> requestSpaetiByAddress(String address) {
         for (Spaeti spaeti : spaetiListFromDb) {
             if (spaeti.getAddress().equals(address))
-                currentRequest.add(spaeti);
+                currentRequests.add(spaeti);
         }
-        return currentRequest;
+        return currentRequests;
     }
 
-    public ArrayList<Spaeti> getCurrentRequest() {
-        return this.currentRequest;
+    public ArrayList<Spaeti> getCurrentRequests() {
+        return this.currentRequests;
     }
 
     public double calculateDistance(Position position, Spaeti spaeti) {
@@ -92,6 +90,8 @@ public class DbDao implements spaetiDao {
         return spaetiListFromDb;
     }
 
-    
+    public void purgeCurrentRequests() {
+        currentRequests.removeAll(currentRequests);
+    }
 
 }

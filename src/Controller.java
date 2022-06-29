@@ -42,21 +42,35 @@ public class Controller {
         @Override
         public void actionPerformed(ActionEvent e) {
             spaetiFinderPanel.setPanelInvisible();
-            rndSpaetiSearchPanel.addPanelToFrame(mainFrame);
-            rndSpaetiSearchPanel.setPanelVisible();
+            nearestSpaetiSearchPanel.addPanelToFrame(mainFrame);
+            nearestSpaetiSearchPanel.setPanelVisible();
         }
     }
 
     public String getDistrictComboBoxInfo() {
+        System.out.println(rndSpaetiSearchPanel.getDistrictComboBox().getSelectedItem().toString());
         return rndSpaetiSearchPanel.getDistrictComboBox().getSelectedItem().toString();
     }
 
     public String getTextFieldInfo() {
+        System.out.println(nearestSpaetiSearchPanel.getAddressTextField().getText());
         return nearestSpaetiSearchPanel.getAddressTextField().getText();
     }
 
     public void setTable(ArrayList<Spaeti> currentRequest) {
-        /* displaySpaetiPanel.getResultsTable().addColumn(); */
+        Integer i = 1;
+        for (Spaeti spaeti : currentRequest) {
+            displaySpaetiPanel.getModel().addRow(new Object[] { i, spaeti.getNameSpaeti(), spaeti.getOpeningTimes(),
+                    spaeti.getAddress(), spaeti.getDistrict(), spaeti.getLatitude(), spaeti.getLongitude() });
+            i++;
+        }
+
+    }
+
+    public void deleteTable() {
+        while (displaySpaetiPanel.getModel().getRowCount() > 0) {
+            displaySpaetiPanel.getModel().removeRow(0);
+        }
     }
 
     class FinalSearchButtonListenerRND implements ActionListener {
@@ -66,7 +80,7 @@ public class Controller {
             rndSpaetiSearchPanel.setPanelInvisible();
             displaySpaetiPanel.addPanelToFrame(mainFrame);
             displaySpaetiPanel.setPanelVisible();
-            setTable(dbDao.getCurrentRequest());
+            setTable(dbDao.getCurrentRequests());
         }
     }
 
@@ -77,7 +91,7 @@ public class Controller {
             nearestSpaetiSearchPanel.setPanelInvisible();
             displaySpaetiPanel.addPanelToFrame(mainFrame);
             displaySpaetiPanel.setPanelVisible();
-            setTable(dbDao.getCurrentRequest());
+            setTable(dbDao.getCurrentRequests());
         }
 
     }
@@ -88,6 +102,8 @@ public class Controller {
             displaySpaetiPanel.setPanelInvisible();
             rndSpaetiSearchPanel.setPanelInvisible();
             nearestSpaetiSearchPanel.setPanelInvisible();
+            deleteTable();
+            dbDao.purgeCurrentRequests();
             spaetiFinderPanel.addPanelToFrame(mainFrame);
             spaetiFinderPanel.setPanelVisible();
         }
