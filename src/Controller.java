@@ -48,15 +48,15 @@ public class Controller {
     }
 
     public String getDistrictComboBoxInfo() {
-        return "district";
+        return rndSpaetiSearchPanel.getDistrictComboBox().getSelectedItem().toString();
     }
 
     public String getTextFieldInfo() {
-        return "address";
+        return nearestSpaetiSearchPanel.getAddressTextField().getText();
     }
 
     public void setTable(ArrayList<Spaeti> currentRequest) {
-
+        /* displaySpaetiPanel.getResultsTable().addColumn(); */
     }
 
     class FinalSearchButtonListenerRND implements ActionListener {

@@ -5,7 +5,9 @@ import java.awt.event.ActionListener;
 
 class RndSpaetiSearchPanel extends GenericPanel {
     private JLabel descriptionRnd = new JLabel("Beliebigen Spätkauf finden");
-    private String[] choices = { "Kreuzberg", "Mitte", "Neukölln" };
+    private String[] choices = { "Treptow-Köpenick", "Tempelhof-Schöneberg", "Neukölln", "Steglitz-Zehlendorf",
+            "Spandau", "Reinickendorf", "Pankow", "Lichtenberg Hohenschönhausen", "Mitte", "Marzahn-Hellersdorf",
+            "Friedrichshain-Kreuzberg", "Charlottenburg-Wilmersdorf" };
     private JComboBox<String> districtComboBox = new JComboBox<String>(choices);
     private JButton rndDistrictSearchButton = new JButton("Suche starten!");
 
@@ -20,6 +22,10 @@ class RndSpaetiSearchPanel extends GenericPanel {
     // clicked
     public void addFinalSearchButtonListenerRND(ActionListener listenForFinalSearchButton) {
         rndDistrictSearchButton.addActionListener(listenForFinalSearchButton);
+    }
+
+    public JComboBox<String> getDistrictComboBox() {
+        return districtComboBox;
     }
 
 }

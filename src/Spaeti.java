@@ -2,16 +2,32 @@ public class Spaeti {
 
     private String nameSpaeti;
     private String openingTimes;
-    private String adress;
+    private String address;
+    private String district;
     private double latitude;
     private double longitude;
 
-    public Spaeti(String nameSpaeti, String openingTimes, String adress, double latitude, double longitude) {
+    public Spaeti(String nameSpaeti, String openingTimes, String address, String district, double latitude, double longitude) {
         this.nameSpaeti = nameSpaeti;
         this.openingTimes = openingTimes;
-        this.adress = adress;
+        this.address = address;
+        this.district = district;
         this.latitude = latitude;
         this.longitude = longitude;
+    }
+
+    public String spaetiToString() {
+        return "Spaeti: " + nameSpaeti + ", with opening Times: " + openingTimes
+                            + ", in district: " + district + ", at address: " + address +
+                            ", and coordinates: " + latitude + ", " + longitude;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getDistrict() {
+        return district;
     }
 
     public double getLatitude() {

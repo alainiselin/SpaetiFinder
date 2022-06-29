@@ -21,4 +21,10 @@ class NearestSpaetiSearchPanel extends GenericPanel {
         nearestSpaetiSearchButton.addActionListener(listenForFinalSearchButton);
     }
 
+    public JTextField getAddressTextField() {
+        return addressTextField;
+    }
+
+    
+
 }

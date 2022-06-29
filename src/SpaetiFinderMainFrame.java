@@ -12,7 +12,6 @@ public class SpaetiFinderMainFrame extends JFrame {
 
         // Frame configuration
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setVisible(true);
         this.setSize(800, 400);
         this.setLayout(borderLayoutFrame);
 
@@ -20,6 +19,7 @@ public class SpaetiFinderMainFrame extends JFrame {
         borderLayoutFrame.setHgap(20);
         borderLayoutFrame.setVgap(20);
 
+        
     }
 
 }
