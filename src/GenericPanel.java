@@ -5,15 +5,14 @@ import java.awt.event.ActionListener;
 
 public class GenericPanel extends JPanel {
     protected BorderLayout borderLayoutPanel = new BorderLayout();
-    private JButton returnHome = new JButton("zur Startseite");
+    protected JButton returnHome = new JButtonDesign("zur Startseite");
 
     GenericPanel() {
         // Panel Layout configuration
         this.setLayout(borderLayoutPanel);
         borderLayoutPanel.setHgap(20);
         borderLayoutPanel.setVgap(20);
-        this.setBackground(new Color(204, 238, 241));
-
+        this.setBackground(new Color(240, 225, 250));
         this.add(returnHome, BorderLayout.SOUTH);
 
     }

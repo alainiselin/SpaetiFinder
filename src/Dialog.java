@@ -3,7 +3,7 @@ import javax.swing.JLabel;
 
 public class Dialog extends JDialog {
     private JDialog dialog = new JDialog();
-    private JLabel message = new JLabel("There is no corresponding Position for your address, please try again!");
+    private JLabel message = new JLabelDesign("There is no corresponding Position for your address, please try again!");
 
     public void createDialog() {
         dialog.setTitle("Attention");

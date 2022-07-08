@@ -15,14 +15,13 @@ public class App {
 
         dbDao.addSpaetiToList();
 
+        // check if spaetis got added
         for (Spaeti spaeti : dbDao.getSpaetiListFromDb()) {
             System.out.println(spaeti.spaetiToString() + "---> was created");
         }
 
         dbDao.addPositionList(position1);
         dbDao.addPositionList(position2);
-
-        /* System.out.println(position1.toString()); */
 
     }
 

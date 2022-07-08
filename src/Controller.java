@@ -54,7 +54,6 @@ public class Controller {
     }
 
     public String getTextFieldInfo() {
-        System.out.println(nearestSpaetiSearchPanel.getAddressTextField().getText());
         return nearestSpaetiSearchPanel.getAddressTextField().getText();
     }
 

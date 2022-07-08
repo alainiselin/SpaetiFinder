@@ -3,8 +3,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 class DisplaySpaetiPanel extends GenericPanel {
-    private JLabel resultsLabel = new JLabel("Ihre Suche hat folgende Ergebnisse erzielt:");
-    
+    private JLabel resultsLabel = new JLabelDesign("Ihre Suche hat folgende Ergebnisse erzielt:");
 
     DefaultTableModel model = new DefaultTableModel();
     JTable resultsTable = new JTable(model);
@@ -18,11 +17,12 @@ class DisplaySpaetiPanel extends GenericPanel {
         model.addColumn("OPENINGTIMES");
         model.addColumn("ADDRESS");
         model.addColumn("DISTRICT");
-        model.addColumn("LATITUDE");
-        model.addColumn("LONGITUDE");
-    }
 
-   
+        /*
+         * model.addColumn("LATITUDE");
+         * model.addColumn("LONGITUDE");
+         */
+    }
 
     public DefaultTableModel getModel() {
         return model;

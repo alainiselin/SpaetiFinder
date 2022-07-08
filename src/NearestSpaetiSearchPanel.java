@@ -4,9 +4,9 @@ import javax.swing.*;
 import java.awt.event.ActionListener;
 
 class NearestSpaetiSearchPanel extends GenericPanel {
-    private JLabel descriptionNear = new JLabel("Nächstgelegenen Spätkauf finden");
+    private JLabel descriptionNear = new JLabelDesign("Nächstgelegenen Spätkauf finden");
     private JTextField addressTextField = new JTextField(30);
-    private JButton nearestSpaetiSearchButton = new JButton("Suche starten!");
+    private JButton nearestSpaetiSearchButton = new JButtonDesign("Suche starten!");
 
     NearestSpaetiSearchPanel() {
         super();
@@ -24,7 +24,5 @@ class NearestSpaetiSearchPanel extends GenericPanel {
     public JTextField getAddressTextField() {
         return addressTextField;
     }
-
-    
 
 }
