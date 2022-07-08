@@ -22,8 +22,6 @@ public class App {
         dbDao.addPositionList(position1);
         dbDao.addPositionList(position2);
 
-
-
         /* System.out.println(position1.toString()); */
 
     }

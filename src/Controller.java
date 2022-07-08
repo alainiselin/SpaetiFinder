@@ -6,6 +6,7 @@ public class Controller {
 
     private SpaetiFinderMainFrame mainFrame;
     private DbDao dbDao;
+    Dialog dialog = new Dialog();
     private SpaetiFinderPanel spaetiFinderPanel = new SpaetiFinderPanel();
     private RndSpaetiSearchPanel rndSpaetiSearchPanel = new RndSpaetiSearchPanel();
     private NearestSpaetiSearchPanel nearestSpaetiSearchPanel = new NearestSpaetiSearchPanel();
@@ -67,7 +68,7 @@ public class Controller {
                 counter++;
             }
         } catch (Exception e) {
-            System.out.println("position does not exist!");
+
         }
         return null;
     }
@@ -102,11 +103,15 @@ public class Controller {
     class FinalSearchButtonListenerNearest implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            dbDao.requestSpaetiByAddress(compareTextFieldInfoWithPositions(getTextFieldInfo()));
-            nearestSpaetiSearchPanel.setPanelInvisible();
-            displaySpaetiPanel.addPanelToFrame(mainFrame);
-            displaySpaetiPanel.setPanelVisible();
-            setTable(dbDao.getCurrentRequests());
+            if (compareTextFieldInfoWithPositions(getTextFieldInfo()) == null) {
+                dialog.setDialogVisible();
+            } else {
+                dbDao.requestSpaetiByAddress(compareTextFieldInfoWithPositions(getTextFieldInfo()));
+                nearestSpaetiSearchPanel.setPanelInvisible();
+                displaySpaetiPanel.addPanelToFrame(mainFrame);
+                displaySpaetiPanel.setPanelVisible();
+                setTable(dbDao.getCurrentRequests());
+            }
         }
 
     }
@@ -119,6 +124,8 @@ public class Controller {
             nearestSpaetiSearchPanel.setPanelInvisible();
             deleteTable();
             dbDao.purgeCurrentRequests();
+            dialog.disposeDialog();
+            dialog.setDialogInvisible();
             spaetiFinderPanel.addPanelToFrame(mainFrame);
             spaetiFinderPanel.setPanelVisible();
         }
