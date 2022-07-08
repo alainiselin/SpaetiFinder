@@ -42,6 +42,9 @@ public class DbDao implements spaetiDao {
         return currentRequests;
     }
 
+    // have to compare input adress with - position adress -> then take coordinates
+    // and calculate distanze for all apetis in spaetilistfromdb - prob with
+    // evaluatenearestspaetitoposition
     public ArrayList<Spaeti> requestSpaetiByAddress(String address) {
         for (Spaeti spaeti : spaetiListFromDb) {
             if (spaeti.getAddress().equals(address))
