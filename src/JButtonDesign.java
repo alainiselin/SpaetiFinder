@@ -19,7 +19,7 @@ public class JButtonDesign extends JButton {
         this.setBorder(new RoundBtn(10)); // 10 is the radius
         this.setBackground(new Color(171, 130, 255));
     }
-
+    
     class RoundBtn implements Border {
         private int r;
 

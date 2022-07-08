@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 public class GenericPanel extends JPanel {
     protected BorderLayout borderLayoutPanel = new BorderLayout();
-    protected JButton returnHome = new JButtonDesign("zur Startseite");
+    protected JButton returnHome = new JButtonDesignReturnHome("zur Startseite");
 
     GenericPanel() {
         // Panel Layout configuration

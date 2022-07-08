@@ -6,7 +6,7 @@ public class Controller {
 
     private SpaetiFinderMainFrame mainFrame;
     private DbDao dbDao;
-    Dialog dialog = new Dialog();
+    private Dialog dialog = new Dialog();
     private SpaetiFinderPanel spaetiFinderPanel = new SpaetiFinderPanel();
     private RndSpaetiSearchPanel rndSpaetiSearchPanel = new RndSpaetiSearchPanel();
     private NearestSpaetiSearchPanel nearestSpaetiSearchPanel = new NearestSpaetiSearchPanel();
