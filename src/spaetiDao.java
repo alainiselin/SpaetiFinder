@@ -7,7 +7,7 @@ public interface spaetiDao {
 
     public void addSpaetiToList();
 
-    public ArrayList<Spaeti> requestSpaetiByAddress(String address);
+    public ArrayList<Spaeti> requestSpaetiByAddress(Position position);
 
     public ArrayList<Spaeti> requestSpaetiByDistrict(String district);
 

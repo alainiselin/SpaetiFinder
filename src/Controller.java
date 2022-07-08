@@ -57,6 +57,21 @@ public class Controller {
         return nearestSpaetiSearchPanel.getAddressTextField().getText();
     }
 
+    public Position compareTextFieldInfoWithPositions(String address) {
+        int counter = 0;
+        try {
+            for (Position position : dbDao.getPositionsList()) {
+                if (address.equals(position.getAddress())) {
+                    return dbDao.getPositionsList().get(counter);
+                }
+                counter++;
+            }
+        } catch (Exception e) {
+            System.out.println("position does not exist!");
+        }
+        return null;
+    }
+
     public void setTable(ArrayList<Spaeti> currentRequest) {
         Integer i = 1;
         for (Spaeti spaeti : currentRequest) {
@@ -87,7 +102,7 @@ public class Controller {
     class FinalSearchButtonListenerNearest implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            dbDao.requestSpaetiByAddress(getTextFieldInfo());
+            dbDao.requestSpaetiByAddress(compareTextFieldInfoWithPositions(getTextFieldInfo()));
             nearestSpaetiSearchPanel.setPanelInvisible();
             displaySpaetiPanel.addPanelToFrame(mainFrame);
             displaySpaetiPanel.setPanelVisible();

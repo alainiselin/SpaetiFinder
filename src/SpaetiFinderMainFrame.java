@@ -19,7 +19,6 @@ public class SpaetiFinderMainFrame extends JFrame {
         borderLayoutFrame.setHgap(20);
         borderLayoutFrame.setVgap(20);
 
-        
     }
 
 }

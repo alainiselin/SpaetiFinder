@@ -19,6 +19,13 @@ public class App {
             System.out.println(spaeti.spaetiToString() + "---> was created");
         }
 
+        dbDao.addPositionList(position1);
+        dbDao.addPositionList(position2);
+
+
+
+        /* System.out.println(position1.toString()); */
+
     }
 
 }
