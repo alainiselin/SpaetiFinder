@@ -3,14 +3,13 @@ import javax.swing.JLabel;
 
 public class Dialog extends JDialog {
     /* private JDialog dialog = new JDialog(); */
-    private JLabel message = new JLabelDesign("There is no corresponding Position for your address, please try again!");
+    private JLabel message = new JLabelDesign("Adress doesn't exist!");
 
     public Dialog() {
         this.setTitle("Attention");
-        this.setBounds(200, 200, 500, 200);
-        message.setBounds(0, 30, 500, 25);
+        this.setLocationRelativeTo(null);
+        this.setSize(200, 50);
         this.add(message);
-
     }
 
     public void setDialogVisible() {
