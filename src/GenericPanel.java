@@ -3,7 +3,7 @@ import javax.swing.*;
 
 import java.awt.event.ActionListener;
 
-public class GenericPanel extends JPanel {
+public abstract class GenericPanel extends JPanel {
     protected BorderLayout borderLayoutPanel = new BorderLayout();
     protected JButton returnHome = new JButtonDesignReturnHome("zur Startseite");
 
@@ -14,7 +14,6 @@ public class GenericPanel extends JPanel {
         borderLayoutPanel.setVgap(20);
         this.setBackground(new Color(240, 225, 250));
         this.add(returnHome, BorderLayout.SOUTH);
-
     }
 
     // Method to connect Panel with Controller --> returnPageButton was clicked

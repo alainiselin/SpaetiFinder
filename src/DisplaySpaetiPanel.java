@@ -17,11 +17,6 @@ class DisplaySpaetiPanel extends GenericPanel {
         model.addColumn("OPENINGTIMES");
         model.addColumn("ADDRESS");
         model.addColumn("DISTRICT");
-
-        /*
-         * model.addColumn("LATITUDE");
-         * model.addColumn("LONGITUDE");
-         */
     }
 
     public DefaultTableModel getModel() {
