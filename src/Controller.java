@@ -74,6 +74,7 @@ public class Controller {
 
     public void setTable(ArrayList<Spaeti> currentRequest) {
         Integer i = 1;
+
         for (Spaeti spaeti : currentRequest) {
             displaySpaetiPanel.getModel().addRow(new Object[] { i, spaeti.getNameSpaeti(), spaeti.getOpeningTimes(),
                     spaeti.getAddress(), spaeti.getDistrict(), spaeti.getLatitude(), spaeti.getLongitude() });

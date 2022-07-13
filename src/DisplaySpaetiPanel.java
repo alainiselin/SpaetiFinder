@@ -11,13 +11,15 @@ class DisplaySpaetiPanel extends GenericPanel {
     public DisplaySpaetiPanel() {
         super();
         this.add(resultsLabel, BorderLayout.NORTH);
-        this.add(resultsTable, BorderLayout.CENTER);
         model.addColumn("ID");
         model.addColumn("NAMESPAETI");
         model.addColumn("OPENINGTIMES");
         model.addColumn("ADDRESS");
         model.addColumn("DISTRICT");
+        this.add(new JScrollPane(resultsTable));
     }
+
+    
 
     public DefaultTableModel getModel() {
         return model;
